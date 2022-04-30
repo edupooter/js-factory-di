@@ -1,4 +1,19 @@
-import createCore from "./core.js";
+import createCore from "./core";
+
+function createMock() {
+  function start() {
+    console.log('[mock] ...');
+  }
+
+  function stop() {
+    console.log('[mock] ...');
+  }
+
+  return {
+    start,
+    stop
+  }
+}
 
 describe('Core quando importado', () => {
   test('deve ter o método start e stop', () => {
@@ -10,7 +25,12 @@ describe('Core quando importado', () => {
 
 describe('Core quando inicializado', () => {
   test('não deve retornar erros', () => {
-    const core = createCore();
+    const databaseMock = createMock();
+    const serverMock = createMock();
+    const core = createCore({
+      database: databaseMock,
+      webserver: serverMock
+    });
     expect(() => {
       core.start();
     }).not.toThrow();

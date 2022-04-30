@@ -1,8 +1,8 @@
 import createDatabaseConnection from "./database.js";
 import createWebserver from "./webserver.js";
 
-export default function createCore() {
-  const database = createDatabaseConnection();
+export default function createCore(configurations = {}) {
+  const database = configurations.database ?? createDatabaseConnection();
   const server = createWebserver();
 
   function start() {

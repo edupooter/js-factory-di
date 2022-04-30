@@ -1,10 +1,10 @@
 function createWebserver() {
-  function start () { 
+  function start() {
     console.log('[webserver] Starting webserver');
     console.log('[webserver] Starting done');
   }
 
-  function stop () {
+  function stop() {
     console.log('[webserver] Stopping webserver');
     console.log('[webserver] Stopping done');
   }
