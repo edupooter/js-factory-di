@@ -1,4 +1,4 @@
-import createCore from './core.mjs';
+import createCore from './core.js';
 
 const core = createCore();
 

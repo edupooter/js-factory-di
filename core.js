@@ -1,7 +1,7 @@
-import createDatabaseConnection from "./database.mjs";
-import createWebserver from "./webserver.mjs";
+import createDatabaseConnection from "./database.js";
+import createWebserver from "./webserver.js";
 
-function createCore() {
+export default function createCore() {
   const database = createDatabaseConnection();
   const server = createWebserver();
 
@@ -24,5 +24,3 @@ function createCore() {
     stop
   }
 }
-
-export default createCore;
